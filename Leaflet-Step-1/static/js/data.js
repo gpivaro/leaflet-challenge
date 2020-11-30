@@ -28,9 +28,9 @@ d3.json(url).then((data) => {
         });
     };
 
+    // Return data on JSON format to mimic and API endpoint
     // console.log(JSON.stringify(cleanData, null, 2));
-
     var myJSON = JSON.stringify(cleanData, null, 2);
-    document.getElementById("demo").textContent = myJSON;
+    document.getElementById("jsonData").textContent = myJSON;
 
 });
