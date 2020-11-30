@@ -31,6 +31,6 @@ d3.json(url).then((data) => {
     // console.log(JSON.stringify(cleanData, null, 2));
 
     var myJSON = JSON.stringify(cleanData, null, 2);
-    document.getElementById("demo").innerHTML = myJSON;
+    document.getElementById("demo").textContent = myJSON;
 
 });
