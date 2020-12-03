@@ -51,8 +51,8 @@ function createMap(earthquakes, data) {
 
     // Define a baseMaps object to hold our base layers
     var baseMaps = {
-        "Street Map": streetmap,
-        "Dark Map": darkmap,
+        //"Street Map": streetmap,
+        //"Dark Map": darkmap,
         "OpenStreet": OpenStreetTiles
     };
 
