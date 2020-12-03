@@ -31,29 +31,29 @@ function createMap(earthquakes, data) {
     
     // To use OpenStreetMap instead of MapBox
     var attribution =
-      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>contributors';
+      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
     var titleUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
     var OpenStreetTiles = L.tileLayer(titleUrl, { attribution });
     
 
     // Define streetmap and darkmap layers
-    var streetmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
-        maxZoom: 18,
-        id: "streets-v11",
-        accessToken: API_KEY
-    });
+    //var streetmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
+    //    maxZoom: 18,
+    //    id: "streets-v11",
+    //    accessToken: API_KEY
+    //});
 
-    var darkmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
-        maxZoom: 18,
-        id: "dark-v10",
-        accessToken: API_KEY
-    });
+    //var darkmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
+    //    maxZoom: 18,
+    //    id: "dark-v10",
+    //    accessToken: API_KEY
+    //});
 
     // Define a baseMaps object to hold our base layers
-    var baseMaps = {
-        "Street Map": streetmap,
-        "Dark Map": darkmap
-    };
+   // var baseMaps = {
+   //     "Street Map": streetmap,
+   //     "Dark Map": darkmap
+   // };
 
     // Create overlay object to hold our overlay layer
     var overlayMaps = {
