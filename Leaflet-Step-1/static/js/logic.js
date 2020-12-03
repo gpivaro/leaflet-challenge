@@ -11,6 +11,13 @@
 //     accessToken: API_KEY
 // }).addTo(myMap);
 
+// To use OpenStreetMap instead of MapBox
+//var attribution =
+//  '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>contributors';
+//var titleUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+//var tiles = L.tileLayer(titleUrl, { attribution });
+//tiles.addTo(myMap);
+
 
 
 // Define a function we want to run once for each feature in the features array
@@ -21,6 +28,13 @@ function addPopup(feature, layer) {
 
 // function to receive a layer of markers and plot them on a map.
 function createMap(earthquakes, data) {
+    
+    // To use OpenStreetMap instead of MapBox
+    var attribution =
+      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>contributors';
+    var titleUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+    var OpenStreetTiles = L.tileLayer(titleUrl, { attribution });
+    
 
     // Define streetmap and darkmap layers
     var streetmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
@@ -50,7 +64,7 @@ function createMap(earthquakes, data) {
     var myMap = L.map("map", {
         center: [38.09, -98.991],
         zoom: 4.5,
-        layers: [streetmap]
+        layers: [OpenStreetTiles]
 
     });
 
