@@ -50,8 +50,61 @@ function createMap(earthquakes, data) {
     var myMap = L.map("map", {
         center: [38.09, -98.991],
         zoom: 4.5,
-        layers: [darkmap]
+        layers: [streetmap]
+
     });
+
+    // // Create a choropleth layer
+    // choroplethLayer = L.choropleth(earthquakes, {
+    //     valueProperty: "Earthquakes7days",
+    //     scale: ["green", "red"],
+    //     steps: 6,
+    //     mode: "q",
+    //     style: {
+    //         color: "#fff",
+    //         weight: 0.5,
+    //         fillOpacity: 0.8
+    //     },
+    //     onEachFeature: function (feature, layer) {
+    //         layer.bindPopup("A");
+    //     }
+    // }).addTo(myMap);
+
+
+    // // Create a legend
+    // var legend = L.control({ position: "bottomright" });
+    // legend.onadd = function () {
+    //     var div = L.DomUtil.create("div", "info legend");
+    //     var limit = choroplethLayer.options.limits;
+    //     var colors = choroplethLayer.options.colors;
+    // }
+
+    var myColors = ["#80ff00", "#bfff00", "#ffff00", "#ffbf00", "#ff8000", "#ff4000"];
+
+    var legend = L.control({ position: 'bottomright' });
+    legend.onAdd = function () {
+
+        var div = L.DomUtil.create('div', 'info legend');
+        labels = [];
+        categories = ['-10-10', '10-30', '30-50', '50-70', '70-90', '+90'];
+
+        for (var i = 0; i < categories.length; i++) {
+
+            div.innerHTML +=
+                labels.push(
+                    '<li class="circle" style="background-color:' + myColors[i] + '"></li> ' +
+                    (categories[i] ? categories[i] : '+'));
+
+        }
+        div.innerHTML += '<ul>' + labels.join('') + '</ul>'
+        return div;
+    };
+    legend.addTo(myMap);
+
+    // Adding a Scale to a map
+    L.control.scale()
+        .addTo(myMap);
+
 
     // Create a layer control
     // Pass in our baseMaps and overlayMaps
@@ -92,7 +145,7 @@ function createMap(earthquakes, data) {
             fillColor: color,
             // Adjust radius
             radius: element.mag * 20000
-        }).bindPopup(`<h3>Name: ${element.title}</h3> <hr> 
+        }).bindPopup(`<h6>Name: ${element.title}</h6> <hr> 
             <p>Date: ${element.time} (UTC)</p> 
             <p>Magnitude: ${element.mag} ml</p>
             <p>Depth: ${element.depth} km</p>
