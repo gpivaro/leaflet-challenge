@@ -79,24 +79,25 @@ function createMap(earthquakes, data) {
     //     var colors = choroplethLayer.options.colors;
     // }
 
+    // Create a legend
     var myColors = ["#80ff00", "#bfff00", "#ffff00", "#ffbf00", "#ff8000", "#ff4000"];
-
+    // https://gis.stackexchange.com/questions/133630/adding-leaflet-legend
     var legend = L.control({ position: 'bottomright' });
     legend.onAdd = function () {
 
         var div = L.DomUtil.create('div', 'info legend');
-        labels = [];
-        categories = ['-10-10', '10-30', '30-50', '50-70', '70-90', '+90'];
+        labels = ["<div style='background-color: lightgray'><strong>&nbsp&nbspDepth (km)&nbsp&nbsp</strong></div>"];
+        categories = ['-10-10', ' 10-30', ' 30-50', ' 50-70', ' 70-90', '+90'];
 
         for (var i = 0; i < categories.length; i++) {
 
             div.innerHTML +=
                 labels.push(
-                    '<li class="circle" style="background-color:' + myColors[i] + '"></li> ' +
-                    (categories[i] ? categories[i] : '+'));
+                    '<li class="circle" style="background-color:' + myColors[i] + '">' + categories[i] + '</li> '
+                );
 
         }
-        div.innerHTML += '<ul>' + labels.join('') + '</ul>'
+        div.innerHTML = '<ul style="list-style-type:none; text-align: center">' + labels.join('') + '</ul>'
         return div;
     };
     legend.addTo(myMap);
