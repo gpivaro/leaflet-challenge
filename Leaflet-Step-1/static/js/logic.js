@@ -49,6 +49,60 @@ function createMap(earthquakes, data) {
 
     });
     
+    
+    
+    // Create the circles for each data point
+    data.forEach(function (element) {
+
+        var color = "";
+
+        if (element.depth < 10) {
+            color = "#80ff00";
+        }
+        else if (element.depth < 30) {
+            color = "#bfff00";
+        }
+        else if (element.depth < 50) {
+            color = "#ffff00";
+        }
+        else if (element.depth < 70) {
+            color = "#ffbf00";
+        }
+        else if (element.depth < 90) {
+            color = "#ff8000";
+        }
+        else {
+            color = "#ff4000";
+        }
+
+
+        // add circles to map
+        L.circle([element.lon, element.lat], {
+            fillOpacity: .8,
+            color: "black",
+            fillColor: color,
+            // Adjust radius
+            radius: element.mag * 20000
+        }).bindPopup(`<h6>Name: ${element.title}</h6> <hr> 
+            <p>Date: ${element.time} (UTC)</p> 
+            <p>Magnitude: ${element.mag} ml</p>
+            <p>Depth: ${element.depth} km</p>
+            <a href="${element.url}" target="_blank">More details...</a>`)
+            .addTo(myMap);
+    });
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     // Create overlay object to hold our overlay layer	
     var overlayMaps = {	
         "Earthquakes": earthquakes	
@@ -92,45 +146,7 @@ function createMap(earthquakes, data) {
         collapsed: false
     }).addTo(myMap);
 
-    // Create the circles for each data point
-    data.forEach(function (element) {
-
-        var color = "";
-
-        if (element.depth < 10) {
-            color = "#80ff00";
-        }
-        else if (element.depth < 30) {
-            color = "#bfff00";
-        }
-        else if (element.depth < 50) {
-            color = "#ffff00";
-        }
-        else if (element.depth < 70) {
-            color = "#ffbf00";
-        }
-        else if (element.depth < 90) {
-            color = "#ff8000";
-        }
-        else {
-            color = "#ff4000";
-        }
-
-
-        // add circles to map
-        L.circle([element.lon, element.lat], {
-            fillOpacity: .8,
-            color: "black",
-            fillColor: color,
-            // Adjust radius
-            radius: element.mag * 20000
-        }).bindPopup(`<h6>Name: ${element.title}</h6> <hr> 
-            <p>Date: ${element.time} (UTC)</p> 
-            <p>Magnitude: ${element.mag} ml</p>
-            <p>Depth: ${element.depth} km</p>
-            <a href="${element.url}" target="_blank">More details...</a>`)
-            .addTo(myMap);
-    });
+    
 
 
 }
