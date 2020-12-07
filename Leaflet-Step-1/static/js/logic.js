@@ -48,6 +48,11 @@ function createMap(earthquakes, data) {
         layers: [OpenStreetTiles]
 
     });
+    
+    // Create overlay object to hold our overlay layer	
+    var overlayMaps = {	
+        "Earthquakes": earthquakes	
+    };
 
    
     // Create a legend
@@ -83,7 +88,7 @@ function createMap(earthquakes, data) {
     // Create a layer control
     // Pass in our baseMaps and overlayMaps
     // Add the layer control to the map
-    L.control.layers(baseMaps, {
+    L.control.layers(baseMaps, overlayMaps, {
         collapsed: false
     }).addTo(myMap);
 
