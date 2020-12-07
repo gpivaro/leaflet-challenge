@@ -1,24 +1,7 @@
-// // Create a map object
-// var myMap = L.map("map", {
-//     center: [37.09, -102.71],
-//     zoom: 4.5
-// });
-
-// // Adding tile layer
-// L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
-//     maxZoom: 18,
-//     id: "streets-v11",
-//     accessToken: API_KEY
-// }).addTo(myMap);
-
-// To use OpenStreetMap instead of MapBox
-//var attribution =
-//  '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>contributors';
-//var titleUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-//var tiles = L.tileLayer(titleUrl, { attribution });
-//tiles.addTo(myMap);
-
-
+/* Date.prototype.toLocaleDateString()
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString */
+var options = { year: 'numeric', month: 'numeric', day: 'numeric' };
+options.timeZone = 'UTC';
 
 // Define a function we want to run once for each feature in the features array
 function addPopup(feature, layer) {
@@ -29,6 +12,7 @@ function addPopup(feature, layer) {
 // function to receive a layer of markers and plot them on a map.
 function createMap(earthquakes, data) {
     
+    // Define variables for our tile layers
     // To use OpenStreetMap instead of MapBox
     var attribution =
       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
@@ -56,11 +40,7 @@ function createMap(earthquakes, data) {
         "OpenStreet": OpenStreetTiles
     };
 
-    // Create overlay object to hold our overlay layer
-    var overlayMaps = {
-        "Earthquakes": earthquakes
-    };
-
+    
     // Create our map, giving it the streetmap and earthquakes layers to display on load
     var myMap = L.map("map", {
         center: [0, 0],
@@ -69,31 +49,7 @@ function createMap(earthquakes, data) {
 
     });
 
-    // // Create a choropleth layer
-    // choroplethLayer = L.choropleth(earthquakes, {
-    //     valueProperty: "Earthquakes7days",
-    //     scale: ["green", "red"],
-    //     steps: 6,
-    //     mode: "q",
-    //     style: {
-    //         color: "#fff",
-    //         weight: 0.5,
-    //         fillOpacity: 0.8
-    //     },
-    //     onEachFeature: function (feature, layer) {
-    //         layer.bindPopup("A");
-    //     }
-    // }).addTo(myMap);
-
-
-    // // Create a legend
-    // var legend = L.control({ position: "bottomright" });
-    // legend.onadd = function () {
-    //     var div = L.DomUtil.create("div", "info legend");
-    //     var limit = choroplethLayer.options.limits;
-    //     var colors = choroplethLayer.options.colors;
-    // }
-
+   
     // Create a legend
     var myColors = ["#80ff00", "#bfff00", "#ffff00", "#ffbf00", "#ff8000", "#ff4000"];
     // https://gis.stackexchange.com/questions/133630/adding-leaflet-legend
@@ -117,6 +73,8 @@ function createMap(earthquakes, data) {
     };
     legend.addTo(myMap);
 
+    
+    
     // Adding a Scale to a map
     L.control.scale()
         .addTo(myMap);
@@ -125,7 +83,7 @@ function createMap(earthquakes, data) {
     // Create a layer control
     // Pass in our baseMaps and overlayMaps
     // Add the layer control to the map
-    L.control.layers(baseMaps, overlayMaps, {
+    L.control.layers(baseMaps, {
         collapsed: false
     }).addTo(myMap);
 
@@ -172,10 +130,7 @@ function createMap(earthquakes, data) {
 
 }
 
-/* Date.prototype.toLocaleDateString()
-     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString */
-var options = { year: 'numeric', month: 'numeric', day: 'numeric' };
-options.timeZone = 'UTC';
+
 
 
 //  United States Geological Survey (USGS) All Earthquakes from the Past 7 Days
@@ -240,7 +195,5 @@ d3.json(url).then((data) => {
     });
 
     createMap(earthquakes, cleanData);
-
-
 
 });
