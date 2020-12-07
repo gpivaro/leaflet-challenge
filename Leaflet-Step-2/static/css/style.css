@@ -1,0 +1,36 @@
+/* Remove the default margin and padding from body */
+body {
+  padding: 0;
+  margin: 0;
+}
+
+#map,
+body,
+html {
+  height: 95%;
+/*   height: 600px; */
+}
+
+/* table specific styling */
+table{
+  font-size: 9pt;
+  text-align: center;
+}
+
+/* style the table title head*/
+#tr-title{
+  text-align: justify;
+}
+/* style the entire column of the table */
+td:nth-child(2) + td { text-align: justify; }
+
+.jumbotron {
+  padding: 30px;
+  margin-bottom: 10px;
+  font-size: 21px;
+  font-weight: 200;
+  line-height: 2.1428571435;
+  color: white;
+  background-color: #557a95;
+  /* margin-top: 0%; */
+}
