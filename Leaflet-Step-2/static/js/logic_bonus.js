@@ -49,10 +49,19 @@ function createMap(earthquakes, data) {
         accessToken: API_KEY
     });
 
+
+    var satellite = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
+        maxZoom: 18,
+        id: "satellite-v9",
+        accessToken: API_KEY
+    });
+
+
     // Define a baseMaps object to hold our base layers
     var baseMaps = {
         "Street Map": streetmap,
         "Dark Map": darkmap,
+        "Satellite": satellite,
         "OpenStreet": OpenStreetTiles
     };
 
@@ -65,7 +74,7 @@ function createMap(earthquakes, data) {
     var myMap = L.map("map", {
         center: [0, 0],
         zoom: 3,
-        layers: [OpenStreetTiles]
+        layers: [satellite]
 
     });
 
