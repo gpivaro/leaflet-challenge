@@ -63,14 +63,20 @@ In this step we are going to..
 
 * The visualization can be seen on the map above and in the following maps below.
 
+#### Dark Map
 ![Bonus_Dark.png](Images/Bonus_Dark.png)
 
+
+#### Dark Map With Earthquakes
 ![Bonus_Dark_Earhquakes.png](Images/Bonus_Dark_Earhquakes.png)
 
+#### Dark Map With Tectonic Plates
 ![Bonus_Dark_Tectonics.png](Images/Bonus_Dark_Tectonics.png)
 
+#### Gray Map With Tectonic Plates
 ![Bonus_Gray_Tectonics.png](Images/Bonus_Gray_Tectonics.png)
 
+#### Street Map
 ![Bonus_Street.png](Images/Bonus_Street.png)
 
 
