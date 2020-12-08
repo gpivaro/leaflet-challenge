@@ -81,8 +81,8 @@ function createMap(earthquakes, data) {
             <p>Date: ${element.time} (UTC)</p> 
             <p>Magnitude: ${element.mag} ml</p>
             <p>Depth: ${element.depth} km</p>
-            <a href="${element.url}" target="_blank">More details...</a>`)
-            .addTo(myMap);
+            <a href="${element.url}" target="_blank">More details...</a>`);
+//             .addTo(myMap);
         
         
         
