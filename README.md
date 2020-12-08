@@ -4,6 +4,9 @@
 ## Rice University Data Analytics and Visualization Boot Camp 2020
 
 This repository contains the following scenario and the final product is available [link](https://gpivaro.github.io/leaflet-challenge/Leaflet-Step-1/index-step-1.html).
+The home page of the app can be seen below.
+
+![Main_Page.png](Images/Main_Page.png)
 
 ## Background
 
@@ -16,6 +19,8 @@ The USGS is responsible for providing scientific data about natural hazards, the
 ### Level 1: Basic Visualization
 
 ![2-BasicMap](Images/2-BasicMap.png)
+
+![Part_I.png](Images/Part_I.png)
 
 Your first task is to visualize an earthquake data set.
 
@@ -59,9 +64,9 @@ In this step we are going to..
 
 - - -
 
-![Main_Page.png](Images/Main_Page.png)
 
-![Part_I.png](Images/Part_I.png)
+
+
 
 ![Data_Table.png](Images/Data_Table.png)
 
