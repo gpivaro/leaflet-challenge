@@ -3,7 +3,7 @@
 
 ## Rice University Data Analytics and Visualization Boot Camp 2020
 
-This repository contains the following scenario and the final product is available [link](https://gpivaro.github.io/leaflet-challenge/Leaflet-Step-1/index-step-1.html).
+This repository contains the following scenario and the final product is available [here]*(https://gpivaro.github.io/leaflet-challenge/Leaflet-Step-1/index-step-1.html).
 The home page of the app can be seen below.
 
 ![Main_Page.png](Images/Main_Page.png)
@@ -79,12 +79,12 @@ In this step we are going to..
 
 ### Additional: Data Table and API
 
-Create a data table where the user can access all the data collected from the last 7 days and display it as a table. The user can access more details about each earthquake by clicking on the link that redirects the user to the USGS page for that specific event.
+Create a data table where the user can access all the data collected from the last 7 days and display it as a table. The user can access more details about each earthquake by clicking on the link that redirects the user to the USGS page for that specific event. The final data table is available [here](https://gpivaro.github.io/leaflet-challenge/Leaflet-Step-1/table-data.html).
 
 ![Data_Table.png](Images/Data_Table.png)
 
 Allow the user to access the JSON version of the data used to plot the earthquakes by creating an API where all the data is available.
-
+The API is available [here](https://gpivaro.github.io/leaflet-challenge/Leaflet-Step-1/data.html).
 
 ![API.png](Images/API.png)
 
