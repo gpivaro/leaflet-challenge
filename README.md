@@ -46,11 +46,12 @@ Your first task is to visualize an earthquake data set.
 
 - - -
 
-### Level 2: More Data (Optional)
+### Level 2: More Data (Bonus)
 
-![5-Advanced](Images/5-Advanced.png)
+![Bonus_Satelitte.png](Images/Bonus_Satelitte.png)
 
-The USGS wants you to plot a second data set on your map to illustrate the relationship between tectonic plates and seismic activity. You will need to pull in a second data set and visualize it along side your original set of data. Data on tectonic plates can be found at <https://github.com/fraxen/tectonicplates>.
+
+Plot a second data set on the map to illustrate the relationship between tectonic plates and seismic activity. Pull in a second data set and visualize it along side your original set of data. Data on tectonic plates can be found at <https://github.com/fraxen/tectonicplates>.
 
 In this step we are going to..
 
@@ -60,13 +61,7 @@ In this step we are going to..
 
 * Add layer controls to our map.
 
-- - -
-
-
-
-
-
-![Data_Table.png](Images/Data_Table.png)
+* The visualization can be seen on the map above and in the following maps below.
 
 ![Bonus_Dark.png](Images/Bonus_Dark.png)
 
@@ -76,9 +71,20 @@ In this step we are going to..
 
 ![Bonus_Gray_Tectonics.png](Images/Bonus_Gray_Tectonics.png)
 
-![Bonus_Satelitte.png](Images/Bonus_Satelitte.png)
-
 ![Bonus_Street.png](Images/Bonus_Street.png)
+
+
+
+- - -
+
+### Additiona: Data Table and API
+
+Create a data table where the user can access all the data collected from the last 7 days and display it as a table. The user can access more details about each earthquake by clicking on the link that redirects the user to the USGS page for that specific event.
+
+![Data_Table.png](Images/Data_Table.png)
+
+Allow the user to access the JSON version of the data used to plot the earthquakes by creating an API where all the data is available.
+
 
 ![API.png](Images/API.png)
 
