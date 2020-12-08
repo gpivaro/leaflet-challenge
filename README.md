@@ -85,3 +85,15 @@ Your final product will be assessed on the following metrics:
 ### Copyright
 
 Trilogy Education Services © 2019. All Rights Reserved.
+
+
+![Main_Page.png](Images/Main_Page.png)
+
+![Part_I.png](Images/Part_I.png)
+
+![Data_Table.png](Images/Data_Table.png)
+
+![Bonus_Dark.png](Images/Bonus_Dark.png)
+
+
+
