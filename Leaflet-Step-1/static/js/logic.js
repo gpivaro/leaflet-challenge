@@ -109,8 +109,8 @@ function createMap(earthquakes, data) {
     
     // Create overlay object to hold our overlay layer	
     var overlayMaps = {	
-        "Earthquakes": earthquakes,
-        "Earthquakes New": erthquakeLayer
+//         "Earthquakes": earthquakes,
+        "Earthquakes": erthquakeLayer
     };
 
     
