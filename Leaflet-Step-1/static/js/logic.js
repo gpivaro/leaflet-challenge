@@ -41,16 +41,10 @@ function createMap(earthquakes, data) {
     };
 
     
-    // Create our map, giving it the streetmap and earthquakes layers to display on load
-    var myMap = L.map("map", {
-        center: [0, 0],
-        zoom: 3,
-        layers: [OpenStreetTiles]
-
-    });
     
     
     
+    var earquakeCircles = [];
     // Create the circles for each data point
     data.forEach(function (element) {
 
@@ -89,25 +83,39 @@ function createMap(earthquakes, data) {
             <p>Depth: ${element.depth} km</p>
             <a href="${element.url}" target="_blank">More details...</a>`)
             .addTo(myMap);
+        
+        
+        
+        // create circles array
+        circles = L.circle([element.lon, element.lat], {
+            fillOpacity: .8,
+            color: "black",
+            fillColor: color,
+            // Adjust radius
+            radius: element.mag * 20000
+        }).bindPopup(`<h6>Name: ${element.title}</h6> <hr> 
+            <p>Date: ${element.time} (UTC)</p> 
+            <p>Magnitude: ${element.mag} ml</p>
+            <p>Depth: ${element.depth} km</p>
+            <a href="${element.url}" target="_blank">More details...</a>`);
+        earquakeCircles.push(circles);
     });
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+       
     
     // Create overlay object to hold our overlay layer	
     var overlayMaps = {	
-        "Earthquakes": earthquakes	
+        "Earthquakes": earthquakes,
+        "Earthquakes New": circles
     };
 
+    
+    // Create our map, giving it the streetmap and earthquakes layers to display on load
+    var myMap = L.map("map", {
+        center: [0, 0],
+        zoom: 3,
+        layers: [OpenStreetTiles, circles]
+
+    });
    
     // Create a legend
     var myColors = ["#80ff00", "#bfff00", "#ffff00", "#ffbf00", "#ff8000", "#ff4000"];
