@@ -11,14 +11,14 @@ function addPopup(feature, layer) {
 
 // function to receive a layer of markers and plot them on a map.
 function createMap(earthquakes, data) {
-    
+
     // Define variables for our tile layers
     // To use OpenStreetMap instead of MapBox
     var attribution =
-      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
     var titleUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
     var OpenStreetTiles = L.tileLayer(titleUrl, { attribution });
-    
+
 
     // Define streetmap and darkmap layers
     //var streetmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
@@ -40,16 +40,14 @@ function createMap(earthquakes, data) {
         "OpenStreet": OpenStreetTiles
     };
 
-    
-    
-    
-    
+
+    // Create the circles for each data point 
     var earquakeCircles = [];
-    // Create the circles for each data point
     data.forEach(function (element) {
 
+        // Select the color of the circle based on the 
+        // depth of the earthquake
         var color = "";
-
         if (element.depth < 10) {
             color = "#80ff00";
         }
@@ -70,22 +68,6 @@ function createMap(earthquakes, data) {
         }
 
 
-        // add circles to map
-        L.circle([element.lon, element.lat], {
-            fillOpacity: .8,
-            color: "black",
-            fillColor: color,
-            // Adjust radius
-            radius: element.mag * 20000
-        }).bindPopup(`<h6 style="font-weight: bold;">${element.title}</h6> <hr> 
-            <p>Date: ${element.time} (UTC)</p> 
-            <p>Magnitude: ${element.mag} ml</p>
-            <p>Depth: ${element.depth} km</p>
-            <a href="${element.url}" target="_blank">More details...</a>`);
-//             .addTo(myMap);
-        
-        
-        
         // create circles array
         circles = L.circle([element.lon, element.lat], {
             fillOpacity: .8,
@@ -100,28 +82,24 @@ function createMap(earthquakes, data) {
             <a href="${element.url}" target="_blank">More details...</a>`);
         earquakeCircles.push(circles);
     });
-    
+
     // create a layerGroup for each state's markers.
     // Now we can handle them as one group instead of referencing each individually.
     var erthquakeLayer = L.layerGroup(earquakeCircles);
 
-       
-    
     // Create overlay object to hold our overlay layer	
-    var overlayMaps = {	
-//         "Earthquakes": earthquakes,
+    var overlayMaps = {
         "Earthquakes": erthquakeLayer
     };
 
-    
     // Create our map, giving it the streetmap and earthquakes layers to display on load
     var myMap = L.map("map", {
-        center: [0, 0],
-        zoom: 3,
+        center: [39, -99],
+        zoom: 5,
         layers: [OpenStreetTiles, erthquakeLayer]
 
     });
-   
+
     // Create a legend
     var myColors = ["#80ff00", "#bfff00", "#ffff00", "#ffbf00", "#ff8000", "#ff4000"];
     // https://gis.stackexchange.com/questions/133630/adding-leaflet-legend
@@ -131,26 +109,20 @@ function createMap(earthquakes, data) {
         var div = L.DomUtil.create('div', 'info legend');
         labels = ["<div style='background-color: lightgray'><strong>&nbsp&nbspDepth (km)&nbsp&nbsp</strong></div>"];
         categories = ['-10-10', ' 10-30', ' 30-50', ' 50-70', ' 70-90', '+90'];
-
         for (var i = 0; i < categories.length; i++) {
-
             div.innerHTML +=
                 labels.push(
                     '<li class="circle" style="background-color:' + myColors[i] + '">' + categories[i] + '</li> '
                 );
-
         }
         div.innerHTML = '<ul style="list-style-type:none; text-align: center">' + labels.join('') + '</ul>'
         return div;
     };
     legend.addTo(myMap);
 
-    
-    
     // Adding a Scale to a map
     L.control.scale()
         .addTo(myMap);
-
 
     // Create a layer control
     // Pass in our baseMaps and overlayMaps
@@ -158,11 +130,7 @@ function createMap(earthquakes, data) {
     L.control.layers(baseMaps, overlayMaps, {
         collapsed: false
     }).addTo(myMap);
-
-    
-
-
-}
+};
 
 
 
@@ -186,19 +154,14 @@ d3.json(url).then((data) => {
 
     // Number of data points on the data set
     console.log(`Number of records: ${EarthquakesData.metadata.count}`);
-
     // Earthquakes magnitude
     console.log(EarthquakesData.features[0].properties.mag);
-
     // Earthquakes time
     console.log(new Date(EarthquakesData.features[0].properties.time));
-
     // Earthquakes lat
     console.log(EarthquakesData.features[0].geometry.coordinates[0]);
-
     // Earthquakes lon
     console.log(EarthquakesData.features[0].geometry.coordinates[1]);
-
     // Earthquakes depth
     console.log(EarthquakesData.features[0].geometry.coordinates[2]);
 
@@ -217,10 +180,7 @@ d3.json(url).then((data) => {
             "depth": EarthquakesData.features[i].geometry.coordinates[2]
         });
     };
-
     console.log(cleanData);
-
-
 
     // Once we get a response, create a geoJSON layer containing the features array and add a popup for each marker
     // then, send the layer to the createMap() function.
@@ -228,6 +188,7 @@ d3.json(url).then((data) => {
         onEachFeature: addPopup
     });
 
+    // Call the function to load the map and the circles
     createMap(earthquakes, cleanData);
 
 });
