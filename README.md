@@ -87,6 +87,9 @@ Your final product will be assessed on the following metrics:
 Trilogy Education Services © 2019. All Rights Reserved.
 
 
+
+[link](https://gpivaro.github.io/leaflet-challenge/Leaflet-Step-1/index-step-1.html)
+
 ![Main_Page.png](Images/Main_Page.png)
 
 ![Part_I.png](Images/Part_I.png)
@@ -104,6 +107,8 @@ Trilogy Education Services © 2019. All Rights Reserved.
 ![Bonus_Satelitte.png](Images/Bonus_Satelitte.png)
 
 ![Bonus_Street.png](Images/Bonus_Street.png)
+
+![API.png](Images/API.png)
 
 
 
