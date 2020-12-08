@@ -100,12 +100,17 @@ function createMap(earthquakes, data) {
             <a href="${element.url}" target="_blank">More details...</a>`);
         earquakeCircles.push(circles);
     });
+    
+    // create a layerGroup for each state's markers.
+    // Now we can handle them as one group instead of referencing each individually.
+    var erthquakeLayer = L.layerGroup(earquakeCircles);
+
        
     
     // Create overlay object to hold our overlay layer	
     var overlayMaps = {	
         "Earthquakes": earthquakes,
-        "Earthquakes New": circles
+        "Earthquakes New": erthquakeLayer
     };
 
     
@@ -113,7 +118,7 @@ function createMap(earthquakes, data) {
     var myMap = L.map("map", {
         center: [0, 0],
         zoom: 3,
-        layers: [OpenStreetTiles, circles]
+        layers: [OpenStreetTiles, erthquakeLayer]
 
     });
    
