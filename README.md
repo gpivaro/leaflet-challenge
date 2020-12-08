@@ -3,8 +3,8 @@
 
 ## Rice University Data Analytics and Visualization Boot Camp 2020
 
-This repository contains the following scenario and the final product is available [here]*(https://gpivaro.github.io/leaflet-challenge/Leaflet-Step-1/index-step-1.html).
-The home page of the app can be seen below.
+This repository contains the following scenario and the final product is available [here*](https://gpivaro.github.io/leaflet-challenge/Leaflet-Step-1/index-step-1.html).
+The home page view of the app can be seen below.
 
 ![Main_Page.png](Images/Main_Page.png)
 
@@ -90,4 +90,4 @@ The API is available [here](https://gpivaro.github.io/leaflet-challenge/Leaflet-
 
 
 
-
+**/* Disclaimer:** The part I of this application is using OpenStreetMap and was deployed on Github pages. By using the OpenStreetMap no API key was necessary. The bonus part is using the Mapbox API and requires API key. Therefore, the bonus part is not available on Github pages.
