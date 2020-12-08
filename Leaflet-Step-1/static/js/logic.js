@@ -72,6 +72,7 @@ function createMap(earthquakes, data) {
         circles = L.circle([element.lon, element.lat], {
             fillOpacity: .8,
             color: "black",
+            weight: 1,
             fillColor: color,
             // Adjust radius
             radius: element.mag * 20000
