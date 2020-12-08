@@ -95,5 +95,16 @@ Trilogy Education Services © 2019. All Rights Reserved.
 
 ![Bonus_Dark.png](Images/Bonus_Dark.png)
 
+![Bonus_Dark_Earhquakes.png](Images/Bonus_Dark_Earhquakes.png)
+
+![Bonus_Dark_Tectonics.png](Images/Bonus_Dark_Tectonics.png)
+
+![Bonus_Gray_Tectonics.png](Images/Bonus_Gray_Tectonics.png)
+
+![Bonus_Satelitte.png](Images/Bonus_Satelitte.png)
+
+![Bonus_Street.png](Images/Bonus_Street.png)
+
+
 
 
