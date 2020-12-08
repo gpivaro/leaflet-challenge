@@ -93,7 +93,7 @@ function createMap(earthquakes, data) {
             fillColor: color,
             // Adjust radius
             radius: element.mag * 20000
-        }).bindPopup(`<h6 style="font-weight: bold;">Name: ${element.title}</h6> <hr> 
+        }).bindPopup(`<h6 style="font-weight: bold;">${element.title}</h6> <hr> 
             <p>Date: ${element.time} (UTC)</p> 
             <p>Magnitude: ${element.mag} ml</p>
             <p>Depth: ${element.depth} km</p>
