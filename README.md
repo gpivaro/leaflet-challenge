@@ -77,7 +77,7 @@ In this step we are going to..
 
 - - -
 
-### Additiona: Data Table and API
+### Additional: Data Table and API
 
 Create a data table where the user can access all the data collected from the last 7 days and display it as a table. The user can access more details about each earthquake by clicking on the link that redirects the user to the USGS page for that specific event.
 
