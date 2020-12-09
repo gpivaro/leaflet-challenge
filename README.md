@@ -85,7 +85,7 @@ In this step we are going to..
 
 ### Additional: Data Table and API
 
-Create a data table where the user can access all the data collected from the last 7 days and display it as a table. The user can access more details about each earthquake by clicking on the link that redirects the user to the USGS page for that specific event. The final data table is available [here](https://gpivaro.github.io/leaflet-challenge/Leaflet-Step-1/table-data.html).
+Create a data table where the user can access all the data collected from the 'All Earthquakes from the Past 7 Days' and display it as a table. The user can access more details about each earthquake by clicking on the link that redirects the user to the USGS page for that specific event. The final data table is available [here](https://gpivaro.github.io/leaflet-challenge/Leaflet-Step-1/table-data.html).
 
 ![Data_Table.png](Images/Data_Table.png)
 
