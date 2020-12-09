@@ -96,4 +96,4 @@ The API is available [here](https://gpivaro.github.io/leaflet-challenge/Leaflet-
 
 
 
-**/* Disclaimer:** The part I of this application is using OpenStreetMap and was deployed on Github pages. By using the OpenStreetMap no API key was necessary. The bonus part is using the Mapbox API and requires API key. Therefore, the bonus part is not available on Github pages.
+**Disclaimer:** The part I of this application is using OpenStreetMap and was deployed on Github pages. By using the OpenStreetMap no API key was necessary. The bonus part is using the Mapbox API and requires API key. Therefore, the bonus part is not available on Github pages.
