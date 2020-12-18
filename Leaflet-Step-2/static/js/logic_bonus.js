@@ -106,7 +106,7 @@ function createMap(earthquakes, tectonicPlates) {
     var myMap = L.map("map", {
         center: [0, 0],
         zoom: 2,
-        layers: [darkmap, earthquakes, tectonicPlates]
+        layers: [Stadia_AlidadeSmoothDark, earthquakes, tectonicPlates]
 
     });
 
