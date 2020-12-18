@@ -147,7 +147,9 @@ function createMap(earthquakes, tectonicPlates) {
 // Data Loading in D3: https://www.tutorialsteacher.com/d3js/loading-data-from-file-in-d3js
 // Promises chaining https://javascript.info/promise-chaining
 // Using GeoJSON with Leaflet https://leafletjs.com/examples/geojson/
-d3.json("/data/tectonicplates-master/GeoJSON/PB2002_boundaries.json").then((tectonicPlatesData) => {
+url_tectonics = 'https://raw.githubusercontent.com/gpivaro/leaflet-challenge/main/data/tectonicplates-master/GeoJSON/PB2002_boundaries.json'
+// d3.json("/data/tectonicplates-master/GeoJSON/PB2002_boundaries.json").then((tectonicPlatesData) => {
+d3.json(url_tectonics).then((tectonicPlatesData) => {
     return tectonicPlatesData
 }).then(
     function (tectonicPlatesData) {
