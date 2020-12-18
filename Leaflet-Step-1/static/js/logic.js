@@ -97,6 +97,7 @@ function createMap(earthquakes, data) {
     var myMap = L.map("map", {
         center: [39, -99],
         zoom: 5,
+        fullscreenControl: true,
         layers: [OpenStreetTiles, erthquakeLayer]
 
     });
