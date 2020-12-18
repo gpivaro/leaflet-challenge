@@ -137,7 +137,7 @@ function createMap(earthquakes, tectonicPlates) {
     // Pass in our baseMaps and overlayMaps
     // Add the layer control to the map
     L.control.layers(baseMaps, overlayMaps, {
-        collapsed: false
+        collapsed: true
     }).addTo(myMap);
 
 }
