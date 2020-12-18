@@ -104,8 +104,8 @@ function createMap(earthquakes, tectonicPlates) {
 
     // Create our map, giving it the streetmap and earthquakes layers to display on load
     var myMap = L.map("map", {
-        center: [0, 0],
-        zoom: 2.5,
+        center: [10, 0],
+        zoom: 2,
         fullscreenControl: true,
         layers: [Stadia_AlidadeSmoothDark, earthquakes, tectonicPlates]
     });
