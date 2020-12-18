@@ -106,8 +106,8 @@ function createMap(earthquakes, tectonicPlates) {
     var myMap = L.map("map", {
         center: [0, 0],
         zoom: 2,
+        fullscreenControl: true,
         layers: [Stadia_AlidadeSmoothDark, earthquakes, tectonicPlates]
-
     });
 
     // Create a legend
